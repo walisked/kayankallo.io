@@ -1,0 +1,54 @@
+import React from "react";
+import { RiVideoDownloadLine } from "react-icons/ri";
+
+export const VideoCard = (props) => {
+  return (
+    <>
+      <div className="w-full py-[10rem] px-4 bg-blue">
+        <div className=" max-w-[1240px] mx-auto grid grid-cols-4 gap-4">
+          <div className="w-full shadow-xl flex flex-col py-4 my-4 rounded-lg hover:scale-105 duration-300">
+            <img
+              className="w-20 mx-auto mt-[-3rem] bg-white"
+              src={props.videoImage}
+              alt=""
+            />
+            <h2 className=" text-2xl font-hold text-center py-8">
+              {props.videoTitle}
+            </h2>
+            <h2 className=" text-2xl font-hold text-center py-8">
+              {props.videoDescription}
+            </h2>
+            <p className="text-center text-4xl font-bold">
+              {" "}
+              {props.videoPrice}{" "}
+            </p>
+            <button className="w-[200px] rounded-md font-medium my-6 mx-auto  md:mx-0 py-3">
+              {" "}
+              <RiVideoDownloadLine/>
+              {" "}
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+{/* <VideoCard
+   videoImage={Banner0}
+   videoTitle={videoList[0].videoTitle}
+   videoDescription={videoList[0].videoDescription}
+   downloadLink={videoList[0].downloadLink}
+/>
+ <VideoCard
+    videoImage={Banner1}
+   videoTitle={videoList[1].videoTitle}
+   videoDescription={videoList[1].videoDescription}
+   downloadLink={videoList[1].downloadLink}
+/>
+   <VideoCard
+    videoImage={Banner2}
+   videoTitle={videoList[2].videoTitle}
+   videoDescription={videoList[2].videoDescription}
+   downloadLink={videoList[2].downloadLink}
+/> */}
