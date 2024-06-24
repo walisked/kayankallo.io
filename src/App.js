@@ -1,38 +1,38 @@
 
-import React from "react";
-// import { BrowserRouter as Router,Switch,Route,Redirect } from "react-router-dom";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Home from './Component/Home';
+import Login from './Component/Login';
+import Register from './Component/RegisterForm';
+import Dashboard from './Component/DashBoard';
+// Removed unused import
+// import LoginForm from './Component/LoginForm';
 
-import { Navbar } from "./Component/Navbar";
-import { Hero } from "./Component/Hero";
-import { Package } from "./Component/Package";
-import { NewsLetter } from "./Component/NewsLetter";
-import { Card } from "./Component/Card";
-import { Video } from "./Component/Movie";
-// import { SignUp } from "./Component/SignUp";
-import { Footer } from "./Component/Footer";
-// import { Login } from "./Component/Login";
 
 function App() {
-  // const [loggedIn, setLoggedIn] =useState(false)
+  const [
+user, setUser] = useState(null);
+
+  const handleLogin = (userData) => {
+    setUser(userData);
+  };
+
+  const handleRegister = (userData) => {
+    setUser(userData);
+  };
+
   return (
-    <>
- 
-    <Navbar/>
-    <Hero/>
-    <Package/>
-    <NewsLetter/>
-    <Card/>
-    <Video/>
-    <Footer/>
-    {/* <Router>
-      <Navbar/>
-        <Switch>
-          <Route path="/">
-            <Login/>
-          </Route>
-        </Switch>
-    </Router> */}
-    </>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login"
+ element={user ? <Navigate to="/dashboard" /> : <Login onLogin={handleLogin} />} />
+          <Route path="/register" element={user ? <Navigate to="/dashboard" /> : <Register onRegister={handleRegister} />} />
+          <Route path="/dashboard" element={user ? <Dashboard user={user} /> : <Navigate to="/" />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

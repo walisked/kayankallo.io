@@ -31,8 +31,8 @@ export const Navbar = () => {
           <li className=" p-4"> SERVICES </li>
           <li className=" p-4"> ABOUT </li>
           <li className="p-4"> CONTECT </li>
-          <li className="p-4"> Login </li>
-          <li className="p-4"> SignUp </li>
+          <li className="p-4"> LOGIN </li>
+          <li className="p-4"> SIGNUP </li>
 
         </ul>
         <div onClick={handleNav} className="block md:hidden">
