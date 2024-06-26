@@ -27,7 +27,7 @@ export const Hero = () => {
                         </div>
 
                         <p className="text-base text-gray-200 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                            Muna sai da Data hakama mu da sabuwar fasara daga kamfanun ka kamar "SULTAN & ALGAITA"DA sauran su. Kana iya mana magana dan mu kawu maka 
+                            Muna sai da Data hakama mu na saka sabuwar fasara daga kamfanun fassara ka kamar "SULTAN & ALGAITA"DA sauran su. Kana iya mana magana dan mu kawu maka 
                             irin zabin ka a sabuwar fassara . kana / kina iya mana magana ta Whatsapp din mu. 
                         </p>
 

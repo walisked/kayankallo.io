@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { Link } from 'react-router-dom';
+
 
 export const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -27,12 +29,24 @@ export const Navbar = () => {
                 </g>
               </svg>
             </a>        <ul className="  hidden md:flex">
-          <li className="p-4"> HOME </li>
-          <li className=" p-4"> SERVICES </li>
-          <li className=" p-4"> ABOUT </li>
-          <li className="p-4"> CONTECT </li>
-          <li className="p-4"> LOGIN </li>
-          <li className="p-4"> SIGNUP </li>
+          <li className="p-4">
+          <Link to="/">HOME</Link>
+        </li>
+        <li className="p-4">
+          <Link to="/services">SERVICES</Link>
+        </li>
+        <li className="p-4">
+          <Link to="/about">ABOUT</Link>
+        </li>
+        <li className="p-4">
+          <Link to="/contact">CONTACT</Link>
+        </li>
+        <li className="p-4">
+          <Link to="/login">LOGIN</Link>
+        </li>
+        <li className="p-4">
+          <Link to="/register">SIGNUP</Link>
+        </li>
 
         </ul>
         <div onClick={handleNav} className="block md:hidden">
