@@ -1,16 +1,9 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Home from "./Component/Home";
 import Login from "./Component/Login";
 import Register from "./Component/RegisterForm";
 import Dashboard from "./Component/DashBoard";
-// Removed unused import
-// import LoginForm from './Component/LoginForm';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -27,11 +20,22 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/" component={Home} />
-          <Route path="/services" component={() => <div>Services Page</div>} />
-          <Route path="/about" component={() => <div>About Page</div>} />
-          <Route path="/contact" component={() => <div>Contact Page</div>} />
+          <Route
+            path="/"
+            element={<Home user={user} />}
+          />
+          <Route
+            path="/services"
+            element={<div>Services Page</div>}
+          />
+          <Route
+            path="/about"
+            element={<div>About Page</div>}
+          />
+          <Route
+            path="/contact"
+            element={<div>Contact Page</div>}
+          />
           <Route
             path="/login"
             element={
@@ -52,7 +56,6 @@ function App() {
               )
             }
           />
-          
           <Route
             path="/dashboard"
             element={user ? <Dashboard user={user} /> : <Navigate to="/" />}

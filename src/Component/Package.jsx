@@ -1,9 +1,19 @@
 import React from 'react';
 // import Banner from '../Assect/images 11.jpeg'
 
- export const Package = ({ user }) => {
+export const Package = ({ user }) => {
   if (!user) {
-    return <div>Loading...</div>;
+    return (
+      <div className="w-full bg-yellow-400 py-16 px-4 text-black">
+        <div className="max-w-[1240px] mx-auto grid md:grid-cols-2">
+          {/* <img className='w-[500px] mx-auto my-4' src={Banner} alt='/' /> */}
+          <div className="flex flex-col justify-center">
+            <p className="font-bold text-lg">Welcome to Data Manager Dashboard</p>
+            <h1 className="md:text-4xl sm:text-3xl text-2xl font-bold py-2">Please log in or register to see your account details.</h1>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -22,5 +32,3 @@ import React from 'react';
     </div>
   );
 };
-
-

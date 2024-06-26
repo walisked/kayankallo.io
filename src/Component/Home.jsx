@@ -7,12 +7,12 @@ import { Video } from "./Movie";
 import { Footer } from "./Footer";
 
 
-function Home() {
+function Home({user}) {
     return (
       <>
       <Navbar/>
       <Hero/>
-      <Package/>
+      <Package user={user} />
       <NewsLetter/>
       <Card/>
       <Video/>
