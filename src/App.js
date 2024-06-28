@@ -9,8 +9,8 @@ import Home from './Component/Home';
 import Login from './Component/Login';
 import Register from './Component/RegisterForm';
 import Dashboard from './Component/DashBoard';
-import NavBar from './Component/NavBar'; // Your default NavBar component
-import NavBarAvatar from './Component/NavBarAvatar'; // Your NavBarAvatar component
+import  Navbar  from './Component/Navbar'; // Your default NavBar component
+import NavBarAvatar from './Component/NavBarAvater'; // Your NavBarAvatar component
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,7 +26,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {user ? <NavBarAvatar onLogout={handleLogout} /> : <NavBar />}
+        {user ? <NavBarAvatar onLogout={handleLogout} /> : <Navbar />}
         <Routes>
           <Route path="/" element={<Home user={user} />} />
           <Route path="/services" element={<div>Services Page</div>} />
