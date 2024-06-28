@@ -32,7 +32,7 @@ export const Footer = () => {
               </svg>
             </a>
             <p className="text-justify">
-              AKAFTA!! is a collection of UI Components created using Tailwind CSS Framework. The UI Components gives you all of the building blocks you need to build any designs without any annoying opinionated styles you have to fight to override.
+              AKAFTA!! Manhaja ce wadda kana iya kawo mata ziyara wajan Downloading sabbin finafinai hakama kana iya sayan Data for MTN,AIRTEL DA SAURAN SU.
             </p>
           </div>
 
@@ -52,11 +52,11 @@ export const Footer = () => {
               <h2 className="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">Blog</h2>
             </div>
             <ul className="leading-8">
-              <li><a href="#" className="hover:text-blue-400">Getting Started With HTML and CSS</a></li>
-              <li><a href="#" className="hover:text-blue-400">What Is Flex And When to Use It?</a></li>
-              <li><a href="#" className="hover:text-blue-400">How TailwindCSS Can Help Your Productivity?</a></li>
-              <li><a href="#" className="hover:text-blue-400">5 Tips to Make Responsive Website</a></li>
-              <li><a href="#" className="hover:text-blue-400">See More</a></li>
+              <li><a href="#" className="hover:text-blue-400">KANA IYA BADA TALLA</a></li>
+              <li><a href="#" className="hover:text-blue-400">YA ZA KA BUN KASA MAN-HAJARKA</a></li>
+              <li><a href="#" className="hover:text-blue-400">YA SOCAIL MEDIA TA KE</a></li>
+              <li><a href="#" className="hover:text-blue-400">ABU BUWAN DA SO TAIMAKA MAKA A ONLINE</a></li>
+              <li><a href="#" className="hover:text-blue-400">KARIN BAYANAI</a></li>
             </ul>
           </div>
           <div className="px-4 my-4 w-full sm:w-auto xl:w-1/5">
@@ -98,7 +98,7 @@ export const Footer = () => {
           <div className="px-4 w-full text-center sm:w-auto sm:text-left">
             Copyright © 2023
             <script>new Date().getFullYear()  2020 && document.write("- " + new Date().getFullYear())</script>- 2022
-            Tailwindow. All Rights Reserved.
+            SOCIAL MEDIA STUDIOR. All Rights Reserved.
           </div>
           <div className="px-4 w-full text-center sm:w-auto sm:text-left">
             Made with ❤️ Social Media Studior.
