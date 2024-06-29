@@ -9,8 +9,8 @@ import Home from './Component/Home';
 import Login from './Component/Login';
 import Register from './Component/RegisterForm';
 import Dashboard from './Component/DashBoard';
-import  Navbar  from './Component/Navbar'; // Your default NavBar component
-import NavBarAvatar from './Component/NavBarAvater'; // Your NavBarAvatar component
+import Navbar from './Component/Navbar';
+import NavBarAvatar from './Component/NavBarAvater';
 
 function App() {
   const [user, setUser] = useState(null);

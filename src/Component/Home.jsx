@@ -1,4 +1,4 @@
-import Navbar from "./Navbar"; // Updated to import default export
+import Navbar from "./Navbar";
 import { Hero } from "./Hero";
 import { Package } from "./Package";
 import { NewsLetter } from "./NewsLetter";
@@ -9,7 +9,7 @@ import { Footer } from "./Footer";
 function Home({ user }) {
   return (
     <>
-      <Navbar user={user} />
+      <Navbar />
       <Hero />
       <Package user={user} />
       <NewsLetter />

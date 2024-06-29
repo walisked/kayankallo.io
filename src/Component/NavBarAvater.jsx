@@ -1,13 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NavBarAvatar = ({ onLogout }) => {
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-        </a>
+        <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <svg version="1.1" viewBox="0 0 3368 512" xmlns="http://www.w3.org/2000/svg" className="h-8">
+            <g fill="none" fillRule="evenodd">
+              <g transform="translate(0 -75)">
+                <g transform="translate(0 75)">
+                  <rect width="512" height="512" rx="128" fill="#3D5AFE"></rect>
+                  <rect x="149" y="176" width="220" height="220" fill="#fff"></rect>
+                  <circle cx="259" cy="156" r="40" fill="#fff"></circle>
+                  <circle cx="369" cy="286" r="40" fill="#2962FF"></circle>
+                </g>
+                <text fill="white" fontFamily="Nunito-Bold, Nunito" fontSize="512" fontWeight="bold">
+                  <tspan x="654" y="518">AKAFTA!!</tspan>
+                </text>
+              </g>
+            </g>
+          </svg>
+        </Link>
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
@@ -31,24 +45,19 @@ const NavBarAvatar = ({ onLogout }) => {
             </div>
             <ul className="py-2" aria-labelledby="user-menu-button">
               <li>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                <Link to="/dashboard" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                   Dashboard
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                <Link to="/settings" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                   Settings
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                  Earnings
-                </a>
-              </li>
-              <li>
-                <a href="#" onClick={onLogout} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                <button onClick={onLogout} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                   Sign out
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -67,52 +76,52 @@ const NavBarAvatar = ({ onLogout }) => {
               fill="none"
               viewBox="0 0 17 14"
             >
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
             </svg>
           </button>
         </div>
         <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
                 aria-current="page"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/about"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/services"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/pricing"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Pricing
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/contact"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
