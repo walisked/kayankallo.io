@@ -31,27 +31,20 @@ const RegisterForm = ({ onRegister }) => {
     const newErrors = validate();
     if (Object.keys(newErrors).length === 0) {
       try {
-        // Create wallet for the user
-        const walletResponse = await axios.post(
-          '{{base_url}}/api/v1/disbursements/wallet',
+        // Create user in MongoDB
+        const response = await axios.post(
+          'http://localhost:5000/RegisterForm',
           {
-            walletReference: `ref${Date.now()}`,
-            walletName: `Wallet - ${Date.now()}`,
-            customerName: `${firstName} ${lastName}`,
-            bvnDetails: {
-              bvn: bvn,
-              bvnDateOfBirth: dob
-            },
-            customerEmail: email
-          },
-          {
-            headers: {
-              Authorization: 'Basic ' + btoa('apiKey:SecretKey') // Replace with your actual API key and secret
-            }
+            firstName,
+            lastName,
+            email,
+            password,
+            bvn,
+            dob
           }
         );
 
-        const userData = walletResponse.data.responseBody;
+        const userData = response.data.user;
         onRegister(userData);
 
         // Clear form fields
@@ -182,33 +175,33 @@ const RegisterForm = ({ onRegister }) => {
                   />
                   {errors.dob && <p className="text-xs italic text-red-500">{errors.dob}</p>}
                 </div>
+                {apiError && <p className="text-xs italic text-red-500">{apiError}</p>}
                 <div className="mb-6 text-center">
                   <button
-                    className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
+                    className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
                     type="submit"
                   >
-                    Register Account
+                    Register
                   </button>
                 </div>
-                {apiError && <p className="text-xs italic text-red-500">{apiError}</p>}
-                <hr className="mb-6 border-t" />
-                <div className="text-center">
-                  <a
-                    className="inline-block text-sm text-blue-500 dark:text-blue-500 align-baseline hover:text-blue-800"
-                    href="#"
-                  >
-                    Forgot Password?
-                  </a>
-                </div>
-                <div className="text-center">
-                  <a
-                    className="inline-block text-sm text-blue-500 dark:text-blue-500 align-baseline hover:text-blue-800"
-                    href="./login"
-                  >
-                    Already have an account? Login!
-                  </a>
-                </div>
               </form>
+              <hr className="mb-6 border-t" />
+              <div className="text-center">
+                <a
+                  className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+                  href="./index.html"
+                >
+                  Already have an account? Login!
+                </a>
+              </div>
+              <div className="text-center">
+                <a
+                  className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+                  href="./forgot-password.html"
+                >
+                  Forgot Password?
+                </a>
+              </div>
             </div>
           </div>
         </div>

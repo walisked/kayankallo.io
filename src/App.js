@@ -11,6 +11,7 @@ import Register from './Component/RegisterForm';
 import Dashboard from './Component/DashBoard';
 import Navbar from './Component/Navbar';
 import NavBarAvatar from './Component/NavBarAvater';
+import ShoppingCart from './Component/ShoppingCart'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -53,8 +54,8 @@ function App() {
             }
           />
           <Route
-            path="/dashboard"
-            element={user ? <Dashboard user={user} /> : <Navigate to="/" />}
+            path="/shoppingcart"
+            element={user ? <ShoppingCart user={user} /> : <Navigate to="/" />}
           />
         </Routes>
       </div>
