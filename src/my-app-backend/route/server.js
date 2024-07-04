@@ -19,6 +19,7 @@ mongoose.connect(process.env.MONGODB_URI, {
   console.error('Error connecting to MongoDB Atlas', err);
 });
 
+// add app.post() and also add the user shema // (register) and also for the login and check the record 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
