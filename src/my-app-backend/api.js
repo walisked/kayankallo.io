@@ -1,13 +1,19 @@
-import axios from 'axios';
+const express = require('express');
+const dotenv = require('dotenv');
+const connectDB = require('./config/db');
 
-const API_URL = 'http://localhost:5000/api/auth';
+dotenv.config();
 
-export const registerUser = async (userData) => {
-  const response = await axios.post(`${API_URL}/register`, userData);
-  return response.data;
-};
+connectDB();
 
-export const loginUser = async (userData) => {
-  const response = await axios.post(`${API_URL}/login`, userData);
-  return response.data;
-};
+const app = express();
+
+app.use(express.json());
+
+app.use('/api/users', require('./routes/userRoutes'));
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
