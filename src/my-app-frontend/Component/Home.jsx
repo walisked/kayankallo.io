@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+import Navbar from "../Component/Common/Navbar";
 import { Hero } from "./Hero";
 import { Package } from "./Wallet";
 import { NewsLetter } from "./NewsLetter";

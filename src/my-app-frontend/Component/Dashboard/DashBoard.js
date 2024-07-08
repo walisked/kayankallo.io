@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 
-const Dashboard = () => {
+const DashBoard = () => {
   return (
     <>
     <div>
@@ -14,4 +14,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashBoard;

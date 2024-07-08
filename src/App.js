@@ -5,12 +5,11 @@ import {
   Routes,
   Navigate,
 } from 'react-router-dom';
-import Home from './Component/Home';
-import Login from './Component/Login';
-import Register from './Component/RegisterForm';
-import Dashboard from './Component/DashBoard';
-import Navbar from './Component/Navbar';
-import NavBarAvatar from './Component/NavBarAvater';
+import Home from './my-app-frontend/Component/Home';
+import Login from './my-app-frontend/Component/Auth/Login';
+import Register from './my-app-frontend/Component/Auth/RegisterForm';
+import Navbar from './my-app-frontend/Component/Common/Navbar';
+import NavBarAvatar from './my-app-frontend/Component/Common/NavBarAvater';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -28,7 +27,7 @@ function App() {
       <div className="App">
         {user ? <NavBarAvatar onLogout={handleLogout} /> : <Navbar />}
         <Routes>
-          <Route path="/" element={<Home user={user} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/services" element={<div>Services Page</div>} />
           <Route path="/about" element={<div>About Page</div>} />
           <Route path="/contact" element={<div>Contact Page</div>} />
@@ -36,7 +35,7 @@ function App() {
             path="/login"
             element={
               user ? (
-                <Navigate to="/dashboard" />
+                <Navigate to="/" />
               ) : (
                 <Login onLogin={handleLogin} />
               )
@@ -46,15 +45,11 @@ function App() {
             path="/register"
             element={
               user ? (
-                <Navigate to="/dashboard" />
+                <Navigate to="/" />
               ) : (
                 <Register onRegister={handleLogin} />
               )
             }
-          />
-          <Route
-            path="/dashboard"
-            element={user ? <Dashboard user={user} /> : <Navigate to="/" />}
           />
         </Routes>
       </div>

@@ -31,7 +31,6 @@ const RegisterForm = ({ onRegister }) => {
     const newErrors = validate();
     if (Object.keys(newErrors).length === 0) {
       try {
-        // Create user in MongoDB
         const response = await axios.post(
           'http://localhost:5000/RegisterForm',
           {
@@ -47,7 +46,6 @@ const RegisterForm = ({ onRegister }) => {
         const userData = response.data.user;
         onRegister(userData);
 
-        // Clear form fields
         setFirstName('');
         setLastName('');
         setEmail('');
@@ -70,15 +68,11 @@ const RegisterForm = ({ onRegister }) => {
         <div className="flex justify-center px-100 py-40">
           <div className="w-full xl:w-3/4 lg:w-11/12 flex">
             <div className="w-full lg:w-7/12 bg-white dark:bg-gray-700 p-5 rounded-lg lg:rounded-l-none">
-              <h3 className="py-4 text-2xl text-center text-gray-800 dark:text-white">
-                Create an Account!
-              </h3>
+              <h3 className="py-4 text-2xl text-center text-gray-800 dark:text-white">Create an Account!</h3>
               <form className="px-8 pt-6 pb-8 mb-4 bg-white dark:bg-gray-800 rounded" onSubmit={handleSubmit}>
                 <div className="mb-4 md:flex md:justify-between">
                   <div className="mb-4 md:mr-2 md:mb-0">
-                    <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="firstName">
-                      First Name
-                    </label>
+                    <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="firstName">First Name</label>
                     <input
                       className={`w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errors.firstName ? 'border-red-500' : ''}`}
                       id="firstName"
@@ -90,9 +84,7 @@ const RegisterForm = ({ onRegister }) => {
                     {errors.firstName && <p className="text-xs italic text-red-500">{errors.firstName}</p>}
                   </div>
                   <div className="md:ml-2">
-                    <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="lastName">
-                      Last Name
-                    </label>
+                    <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="lastName">Last Name</label>
                     <input
                       className={`w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errors.lastName ? 'border-red-500' : ''}`}
                       id="lastName"
@@ -105,13 +97,11 @@ const RegisterForm = ({ onRegister }) => {
                   </div>
                 </div>
                 <div className="mb-4">
-                  <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="email">
-                    Email
-                  </label>
+                  <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="email">Email</label>
                   <input
-                    className={`w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errors.email ? 'border-red-500' : ''}`}
+                    className={`w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errors.email ? 'border-red-500' : ''}`}
                     id="email"
-                    type="email"
+                    type="text"
                     placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -120,88 +110,69 @@ const RegisterForm = ({ onRegister }) => {
                 </div>
                 <div className="mb-4 md:flex md:justify-between">
                   <div className="mb-4 md:mr-2 md:mb-0">
-                    <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="password">
-                      Password
-                    </label>
+                    <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="password">Password</label>
                     <input
                       className={`w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errors.password ? 'border-red-500' : ''}`}
                       id="password"
                       type="password"
-                      placeholder="******"
+                      placeholder="******************"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
                     {errors.password && <p className="text-xs italic text-red-500">{errors.password}</p>}
                   </div>
                   <div className="md:ml-2">
-                    <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="confirmPassword">
-                      Confirm Password
-                    </label>
+                    <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="c_password">Confirm Password</label>
                     <input
                       className={`w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errors.confirmPassword ? 'border-red-500' : ''}`}
-                      id="confirmPassword"
+                      id="c_password"
                       type="password"
-                      placeholder="******"
+                      placeholder="******************"
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                     {errors.confirmPassword && <p className="text-xs italic text-red-500">{errors.confirmPassword}</p>}
                   </div>
                 </div>
-                <div className="mb-4">
-                  <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="bvn">
-                    BVN
-                  </label>
-                  <input
-                    className={`w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errors.bvn ? 'border-red-500' : ''}`}
-                    id="bvn"
-                    type="text"
-                    placeholder="BVN"
-                    value={bvn}
-                    onChange={(e) => setBvn(e.target.value)}
-                  />
-                  {errors.bvn && <p className="text-xs italic text-red-500">{errors.bvn}</p>}
-                </div>
-                <div className="mb-4">
-                  <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="dob">
-                    Date of Birth
-                  </label>
-                  <input
-                    className={`w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errors.dob ? 'border-red-500' : ''}`}
-                    id="dob"
-                    type="date"
-                    value={dob}
-                    onChange={(e) => setDob(e.target.value)}
-                  />
-                  {errors.dob && <p className="text-xs italic text-red-500">{errors.dob}</p>}
+                <div className="mb-4 md:flex md:justify-between">
+                  <div className="mb-4 md:mr-2 md:mb-0">
+                    <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="bvn">BVN</label>
+                    <input
+                      className={`w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errors.bvn ? 'border-red-500' : ''}`}
+                      id="bvn"
+                      type="text"
+                      placeholder="Bank Verification Number"
+                      value={bvn}
+                      onChange={(e) => setBvn(e.target.value)}
+                    />
+                    {errors.bvn && <p className="text-xs italic text-red-500">{errors.bvn}</p>}
+                  </div>
+                  <div className="md:ml-2">
+                    <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="dob">Date of Birth</label>
+                    <input
+                      className={`w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errors.dob ? 'border-red-500' : ''}`}
+                      id="dob"
+                      type="date"
+                      placeholder="Date of Birth"
+                      value={dob}
+                      onChange={(e) => setDob(e.target.value)}
+                    />
+                    {errors.dob && <p className="text-xs italic text-red-500">{errors.dob}</p>}
+                  </div>
                 </div>
                 {apiError && <p className="text-xs italic text-red-500">{apiError}</p>}
                 <div className="mb-6 text-center">
-                  <button
-                    className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
-                    type="submit"
-                  >
-                    Register
-                  </button>
+                  <button className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="submit">Register</button>
+                </div>
+                <hr className="mb-6 border-t" />
+                <div className="text-center">
+                  <a className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800" href="/">Already have an account? Login!</a>
+                </div>
+                <div className="text-center">
+                  <a className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800" href="/">Forgot Password?</a>
                 </div>
               </form>
-              <hr className="mb-6 border-t" />
-              <div className="text-center">
-                <a
-                  className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                  href="./index.html"
-                >
-                  Already have an account? Login!
-                </a>
-              </div>
-              <div className="text-center">
-                <a
-                  className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                  href="./forgot-password.html"
-                >
-                  Forgot Password?
-                </a>
-              </div>
+              <p className="text-center text-gray-500 text-xs">&copy;2023 SMS. All rights reserved.</p>
             </div>
           </div>
         </div>
