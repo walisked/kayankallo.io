@@ -6,12 +6,12 @@ import { Card } from "./Data";
 import { Video } from "./Movie";
 import { Footer } from "./Footer";
 
-function Home({ user }) {
+function Home() {
   return (
     <>
       <Navbar />
       <Hero />
-      <Package user={user} />
+      <Package/>
       <NewsLetter />
       <Card />
       <Video />
