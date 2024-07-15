@@ -5,7 +5,7 @@ import Title from './LandingTitle'
 import Pricing from './LandingPricing'
 import Action from './Action'
 import { Footer } from './Footer'
-import { Video } from './Movies/Movie'
+import Video from './Movies/Movie'
 function LandingPage() {
   return (
     <>
@@ -16,7 +16,7 @@ function LandingPage() {
     <Title/>
     <Pricing/>
     <Action/>
-    {<Video/>}   
+    <Video/>  
  </div>
     {<Footer/>}
     </>
