@@ -3,7 +3,7 @@ import { Hero } from "./Hero";
 import { Package } from "./Wallet";
 import { NewsLetter } from "./NewsLetter";
 import { Card } from "./Data";
-import { Video } from "./Movie";
+import { Video } from "./Movies/Movie";
 import { Footer } from "./Footer";
 
 function Home() {

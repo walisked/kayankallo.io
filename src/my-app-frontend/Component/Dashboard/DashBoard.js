@@ -1,14 +1,23 @@
 import React from 'react';
-import Navbar from './Navbar';
+import NavBarAvatar from '../Common/NavBarAvater';
+import Welcome from '../Welcome'
+import Package from '../Wallet';
+import Action from '../Action';
+import { Card } from '../Data';
+import { Video } from '../Movies/Movie';
+import { Footer } from '../Footer';
 
 const DashBoard = () => {
   return (
     <>
     <div>
-      <Navbar />
-      <h1>Dashboard</h1>
-      <h2>Welcome </h2>
-      <p>Account Number: 7887908809 </p>
+      <NavBarAvatar />
+      <Welcome/>
+      <Package/>
+      <Action/>
+      <Card/>
+      <Video/>
+      <Footer/>
     </div>
     </>
   );
