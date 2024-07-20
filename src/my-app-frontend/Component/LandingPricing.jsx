@@ -82,7 +82,7 @@ function LandingPricing() {
               </div>
               <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                 <div className="w-full pt-6 text-4xl font-bold text-center">
-                  N.99
+                  N.800
                 </div>
                 <div className="flex items-center justify-center">
                   <Link to="/register" className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
@@ -102,7 +102,7 @@ function LandingPricing() {
               </div>
               <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                 <div className="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
-                  N.99
+                  N.1100
                 </div>
                 <div className="flex items-center justify-center">
                   <Link to="/register" className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
