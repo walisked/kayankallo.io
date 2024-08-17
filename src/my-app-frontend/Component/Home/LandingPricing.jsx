@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function LandingPricing() {
+export const Pricing = () => {
   const kyautaFeatures = [
     { key: 'FARASHIN WATA', value: 'N0' },
     { key: 'SAUTI DA KWARI', value: 'Ehto' },
@@ -118,4 +118,4 @@ function LandingPricing() {
   );
 }
 
-export default LandingPricing;
+

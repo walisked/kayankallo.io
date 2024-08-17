@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye';
 
 const RegisterForm = ({ onRegister }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [errors, setErrors] = useState({});
   const [apiError, setApiError] = useState(null);
+
+  const [type, setType] = useState('password');
+  const [icon, setIcon] = useState(eyeOff);
 
   const validate = () => {
     const newErrors = {};
     if (!name) newErrors.name = 'Name is required';
     if (!email) newErrors.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = 'Email address is invalid';
+    if (!password) newErrors.password = 'Password is required';
+    if (password !== confirmPassword) newErrors.confirmPassword = 'Passwords do not match';
     if (!phoneNumber) newErrors.phoneNumber = 'Phone Number is required';
     return newErrors;
   };
@@ -25,6 +35,7 @@ const RegisterForm = ({ onRegister }) => {
         const response = await axios.post('http://localhost:5000/register', {
           name,
           email,
+          password,
           phoneNumber,
         });
 
@@ -33,13 +44,26 @@ const RegisterForm = ({ onRegister }) => {
 
         setName('');
         setEmail('');
+        setPassword('');
+        setConfirmPassword('');
         setPhoneNumber('');
+        setErrors({});
         setApiError(null);
       } catch (error) {
-        setApiError('Failed to register. Please try again.');
+        setApiError(error.response?.data?.message || 'Failed to register. Please try again.');
       }
     } else {
       setErrors(newErrors);
+    }
+  };
+
+  const handleToggle = () => {
+    if (type === 'password') {
+      setIcon(eye);
+      setType('text');
+    } else {
+      setIcon(eyeOff);
+      setType('password');
     }
   };
 
@@ -74,6 +98,38 @@ const RegisterForm = ({ onRegister }) => {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                   {errors.email && <p className="text-xs italic text-red-500">{errors.email}</p>}
+                </div>
+                <div className="mb-4 relative">
+                  <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="password">Password</label>
+                  <input
+                    className={`w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errors.password ? 'border-red-500' : ''}`}
+                    id="password"
+                    type={type}
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    autoComplete="current-password"
+                  />
+                  <span className="absolute inset-y-0 right-0 pr-3 flex items-center" onClick={handleToggle}>
+                    <Icon icon={icon} size={20} className="text-gray-700 dark:text-white cursor-pointer" />
+                  </span>
+                  {errors.password && <p className="text-xs italic text-red-500">{errors.password}</p>}
+                </div>
+                <div className="mb-4 relative">
+                  <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="confirmPassword">Confirm Password</label>
+                  <input
+                    className={`w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errors.confirmPassword ? 'border-red-500' : ''}`}
+                    id="confirmPassword"
+                    type={type}
+                    placeholder="Confirm Password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    autoComplete="current-password"
+                  />
+                  <span className="absolute inset-y-0 right-0 pr-3 flex items-center" onClick={handleToggle}>
+                    <Icon icon={icon} size={20} className="text-gray-700 dark:text-white cursor-pointer" />
+                  </span>
+                  {errors.confirmPassword && <p className="text-xs italic text-red-500">{errors.confirmPassword}</p>}
                 </div>
                 <div className="mb-4">
                   <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="phoneNumber">Phone Number</label>

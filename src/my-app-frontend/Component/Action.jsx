@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Action() {
+export const Action = () => {
   return (
     <div>
             <section className="container mx-auto text-center py-6 mb-12">
@@ -21,4 +21,3 @@ function Action() {
   )
 }
 
-export default Action

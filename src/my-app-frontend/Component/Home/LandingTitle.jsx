@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-
-function LandingTitle() {
+export const Title = () => {
   return (
     <div>
           <section className="bg-white border-b py-8">
@@ -403,4 +402,3 @@ function LandingTitle() {
   )
 }
 
-export default LandingTitle

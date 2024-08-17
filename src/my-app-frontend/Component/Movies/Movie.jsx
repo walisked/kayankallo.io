@@ -1,6 +1,6 @@
 import React from "react";
 
-const Video = ({ videoImage, videoTitle, videoDescription, videoPrice }) => {
+export const Video = ({ videoImage, videoTitle, videoDescription, videoPrice }) => {
   return (
     <div className="bg-gray-900 py-16">
       <div className="container mx-auto px-4">
@@ -94,4 +94,4 @@ const Video = ({ videoImage, videoTitle, videoDescription, videoPrice }) => {
   );
 };
 
-export default Video;
+

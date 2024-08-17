@@ -11,7 +11,7 @@ export const NewsLetter = () => {
             {" "}
             Customer Service: {mail}{" "}
           </p>
-          <p className="p"> <FaWhatsappSquare/> +234 812 3456 789 </p>
+          <p className="p"> <FaWhatsappSquare/> +234 8147462662 </p>
         </div>
         <div className="my-4">
           <div className=" flex flex-col sm:flex-row items-center justify-between w-full">

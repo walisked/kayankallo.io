@@ -28,7 +28,7 @@ const Login = ({ onLogin }) => {
         if (password === 'WA0963@Lisked') {
           navigate('/admin-dashboard');
         } else {
-          navigate('/dashboard');
+          navigate('/src/my-app-frontend/Component/Dashboard/DashBoard.js');
         }
       } catch (error) {
         setErrors({ form: 'Failed to login. Please try again.' });

@@ -5,12 +5,12 @@ import {
   Routes,
   Navigate,
 } from 'react-router-dom';
-import LandingPage from './my-app-frontend/Component/LandingPage';
-// import Home from './my-app-frontend/Component/Home';
+import Home from './my-app-frontend/Component/Home/Home'
 import Login from './my-app-frontend/Component/Auth/Login';
 import Register from './my-app-frontend/Component/Auth/RegisterForm';
 import Navbar from './my-app-frontend/Component/Common/Navbar';
 import NavBarAvatar from './my-app-frontend/Component/Common/NavBarAvater';
+import {Footer} from './my-app-frontend/Component/Common/Footer'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -25,10 +25,11 @@ function App() {
 
   return (
     <Router>
+      <>
       <div className="App">
         {user ? <NavBarAvatar onLogout={handleLogout} /> : <Navbar />}
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<Home />} />
           <Route path="/services" element={<div>Services Page</div>} />
           <Route path="/about" element={<div>About Page</div>} />
           <Route path="/contact" element={<div>Contact Page</div>} />
@@ -36,7 +37,7 @@ function App() {
             path="/login"
             element={
               user ? (
-                <Navigate to="/" />
+                <Navigate to="/src/my-app-frontend/Component/Dashboard/DashBoard.js"/>
               ) : (
                 <Login onLogin={handleLogin} />
               )
@@ -46,15 +47,18 @@ function App() {
             path="/register"
             element={
               user ? (
-                <Navigate to="/" />
+                <Navigate to="/login" />
               ) : (
                 <Register onRegister={handleLogin} />
               )
             }
           />
         </Routes>
+        {<Footer/>}
       </div>
+      </>
     </Router>
+
   );
 }
 

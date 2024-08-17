@@ -1,23 +1,17 @@
 import React from 'react';
-import NavBarAvatar from '../Common/NavBarAvater';
-import Welcome from '../Welcome'
-import Package from '../Wallet';
-import Action from '../Action';
-import { Card } from '../Data';
+// import {Welcome} from '../Welcome'
+import { Wallet } from './WalletDashboard';
+import { Card } from '../SIMPackages/Packages';
 import { Video } from '../Movies/Movie';
-import { Footer } from '../Footer';
 
 const DashBoard = () => {
   return (
     <>
     <div>
-      <NavBarAvatar />
-      <Welcome/>
-      <Package/>
-      <Action/>
+      {/* <Welcome/> */}
+      <Wallet/>
       <Card/>
       <Video/>
-      <Footer/>
     </div>
     </>
   );
