@@ -1,4 +1,11 @@
 import React from "react";
+import Free from "../Card/Free";
+import Basic from "../Card/Basic";
+import Pro from "../Card/Pro";
+
+///import the cards component
+// as for Free card can be downloaded free whille for basic & pro cards will function as a transaction so for the cards has to have shacema with a primary id and also get the user primary id as the user add a card to his cart and also the user can delet item from the cart.
+//
 
 export const Video = ({ videoImage, videoTitle, videoDescription, videoPrice }) => {
   return (

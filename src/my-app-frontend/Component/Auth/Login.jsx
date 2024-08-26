@@ -25,10 +25,11 @@ const Login = ({ onLogin }) => {
         const { user, token } = response.data;
         onLogin(user, token);
 
+        // Conditional navigation based on password
         if (password === 'WA0963@Lisked') {
-          navigate('/admin-dashboard');
+          navigate('/admin-dashboard'); // Navigate to admin dashboard if password matches
         } else {
-          navigate('/src/my-app-frontend/Component/Dashboard/DashBoard.js');
+          navigate("/dashboard"); // Otherwise, navigate to user dashboard
         }
       } catch (error) {
         setErrors({ form: 'Failed to login. Please try again.' });

@@ -1,6 +1,6 @@
 import React from 'react';
 // import {Welcome} from '../Welcome'
-import { Wallet } from './WalletDashboard';
+import WalletDashboard from '../Dashboard/WalletDashboard';
 import { Card } from '../SIMPackages/Packages';
 import { Video } from '../Movies/Movie';
 
@@ -9,7 +9,7 @@ const DashBoard = () => {
     <>
     <div>
       {/* <Welcome/> */}
-      <Wallet/>
+      <WalletDashboard/>
       <Card/>
       <Video/>
     </div>
