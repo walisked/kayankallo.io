@@ -73,7 +73,7 @@ function WalletDashboard() {
             <thead>
               <tr>
                 <th className="px-4 py-2 text-left border-b-2 w-full">
-                  <h2 className="text-ml font-bold text-gray-600">History</h2>
+                  <h2 className="text-ml font-bold text-gray-600">History</h2>` 
                 </th>
               </tr>
             </thead>

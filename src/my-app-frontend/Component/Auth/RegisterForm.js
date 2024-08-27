@@ -27,6 +27,8 @@ const RegisterForm = ({ onRegister }) => {
     return newErrors;
   };
 
+  //generate a random id numbers with alphabet code for each user that click sumbmit add the primary id to the post register
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = validate();

@@ -34,7 +34,7 @@ mongoose.connect('mongodb://localhost:27017/AKAFTA!!', {
   .then(() => console.log('MongoDB connected locally'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-
+// the user primary id was created after the user click the submit buttom so get that primary id add the userschema save it also at the mongoose User
 // User Schema and Model
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
@@ -128,7 +128,7 @@ app.get('*', (req, res) => {
   console.log(path.join(__dirname, 'build', 'index.html'))
 });
 
-
+// cart and pusche endpoint 
 
 // Starting the server
 app.listen(PORT, () => {
