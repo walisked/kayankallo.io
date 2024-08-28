@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProSubscriptionCard = () => {
+const ProSubscriptionCard = ({ onSubscribe }) => {
   return (
     <div className="flex items-center justify-center h-screen bg-[#0d1829]">
       <div className="mx-auto bg-white rounded-3xl shadow-xl">
@@ -57,7 +57,7 @@ const ProSubscriptionCard = () => {
               </div>
             </div>
             <div className="flex justify-center mt-4">
-              <button className="bg-cyan-500 text-white px-4 py-2 rounded-md">Add to Cart</button>
+              <button onClick={onSubscribe} className="bg-cyan-500 text-white px-4 py-2 rounded-md">Add to Cart</button>
             </div>
           </div>
         </div>
